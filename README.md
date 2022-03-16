@@ -16,7 +16,6 @@ To use this project, you need to enter your latitude and longitude coordinates u
 ```
 ## How to use the app:
 ---
-+ make sure that you enter your data (email, password, your lat, your long) into the code
 + run the app
 + if the ISS is above you in the sky, you will be notified by email
 ---
