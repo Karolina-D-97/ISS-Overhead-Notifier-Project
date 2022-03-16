@@ -4,12 +4,12 @@ import requests
 from datetime import datetime
 import smtplib
 
-MY_LAT = 50.667728  #YOUR LATTITUDE
-MY_LONG = 17.928600 #YOUR LONGTITUDE
+MY_LAT = float(input("What is your latitude?"))
+MY_LONG = float(input("What is your longitude?"))
 
-FROM_EMAIL = "Y0UR EMAIL"
-SEND_TO_THIS_EMAIL = "YOUR EMAIL"
-PASSWORD = "YOUR PASSWORD"
+FROM_EMAIL = input("What is your e-mail address from which you want to send the message?")
+PASSWORD = input("What is the password for this email?")
+SEND_TO_THIS_EMAIL = input("What is your e-mail address you want to send the message to?")
 
 
 
@@ -37,7 +37,6 @@ def is_night():
     data = response.json()
     sunrise = int(data["results"]["sunrise"].split("T")[1].split(":")[0])
     sunset = int(data["results"]["sunset"].split("T")[1].split(":")[0])
-    #sun = (sunrise, sunset)
 
     time_now = datetime.now().hour
 
@@ -55,8 +54,6 @@ while True:
                 to_addrs=SEND_TO_THIS_EMAIL,
                 msg=f"Subject:Look Up 👆\n\nThe ISS is above you in the sky"
             )
-
-
 
 
 
